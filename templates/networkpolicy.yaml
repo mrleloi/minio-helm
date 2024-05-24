@@ -47,6 +47,7 @@ spec:
     - ports:
         - port: {{ .Values.containerPorts.console }}
         - port: {{ .Values.containerPorts.api }}
+        - port: 80
       {{- if not .Values.networkPolicy.allowExternal }}
       from:
         - podSelector:
