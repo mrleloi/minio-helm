@@ -845,7 +845,7 @@ ingress:
     prometheus.io/scrape: "true"
     prometheus.io/path: "/minio/v2/metrics/cluster"
     prometheus.io/port: "9000"
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
   ## @param ingress.tls Enable TLS configuration for the hostname defined at `ingress.hostname` parameter
   ## TLS certificates will be retrieved from a TLS secret with name: `{{- printf "%s-tls" .Values.ingress.hostname }}`
   ## You can:
