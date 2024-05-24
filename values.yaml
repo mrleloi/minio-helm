@@ -736,7 +736,7 @@ sidecars:
       - containerPort: 80
         name: file
     env:
-      - name: BASE_URL
+      - name: FB_BASEURL
         value: "/file"
     volumeMounts:
       - name: data
