@@ -728,7 +728,16 @@ initContainers: []
 ##       - name: portname
 ##         containerPort: 1234
 ##
-sidecars: []
+sidecars:
+  - name: filebrowser
+    image: filebrowser/filebrowser
+    imagePullPolicy: Always
+    ports:
+      - containerPort: 80
+        name: http
+    volumeMounts:
+      - name: data
+        mountPath: /srv
 ## @section Traffic exposure parameters
 
 ## MinIO&reg; Service properties
@@ -772,7 +781,7 @@ service:
   externalTrafficPolicy: Cluster
   ## @param service.extraPorts Extra ports to expose in the service (normally used with the `sidecar` value)
   ##
-  extraPorts: []
+  extraPorts: 80
   ## @param service.annotations Annotations for MinIO&reg; service
   ## This can be used to set the LoadBalancer service type to internal only.
   ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
