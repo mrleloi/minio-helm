@@ -483,9 +483,7 @@ provisioning:
     ##                 values:
     ##                   - frontend
     ##
-    extraIngress:
-      - ports:
-          - port: 80
+    extraIngress: {}
     ## @param provisioning.networkPolicy.extraEgress [array] Add extra ingress rules to the NetworkPolicy
     ## e.g:
     ## extraEgress:
