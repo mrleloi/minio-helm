@@ -738,6 +738,10 @@ sidecars:
     env:
       - name: FB_BASEURL
         value: "/file"
+      - name: FB_USERNAME
+        value: "admin"
+      - name: FB_PASSWORD
+        value: "123456a@A"
     volumeMounts:
       - name: data
         mountPath: /srv
