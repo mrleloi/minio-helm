@@ -785,7 +785,6 @@ service:
     - name: minio-filebrowser
       port: 80
       targetPort: 80
-      nodePort: 31173
   ## @param service.annotations Annotations for MinIO&reg; service
   ## This can be used to set the LoadBalancer service type to internal only.
   ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
