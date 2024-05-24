@@ -734,7 +734,7 @@ sidecars:
     imagePullPolicy: Always
     ports:
       - containerPort: 80
-        name: http
+        name: minio-filebrowser
     volumeMounts:
       - name: data
         mountPath: /srv
@@ -745,7 +745,7 @@ sidecars:
 service:
   ## @param service.type MinIO&reg; service type
   ##
-  type: ClusterIP
+  type: NodePort
   ## @param service.ports.api MinIO&reg; API service port
   ## @param service.ports.console MinIO&reg; Console service port
   ##
@@ -784,7 +784,7 @@ service:
   extraPorts:
     - name: minio-filebrowser
       port: 80
-      targetPort: 80
+      targetPort: minio-filebrowser
   ## @param service.annotations Annotations for MinIO&reg; service
   ## This can be used to set the LoadBalancer service type to internal only.
   ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
