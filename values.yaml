@@ -736,8 +736,8 @@ sidecars:
       - containerPort: 80
         name: file
     env:
-     - name: BASE_URL
-       value: "https://minio.baityapp.online/file/"
+      - name: BASE_URL
+        value: "/file"
     volumeMounts:
       - name: data
         mountPath: /srv
