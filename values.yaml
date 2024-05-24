@@ -871,6 +871,7 @@ ingress:
   ##
   extraPaths:
   - path: /file
+    pathType: ImplementationSpecific
     backend:
       serviceName: minio
       servicePort: 80
