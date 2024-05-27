@@ -877,8 +877,6 @@ ingress:
   extraPaths:
   - path: /file(/|$)(.*)
     pathType: ImplementationSpecific
-    annotations:
-      nginx.ingress.kubernetes.io/rewrite-target: /$2
     backend:
       service:
         name: minio
