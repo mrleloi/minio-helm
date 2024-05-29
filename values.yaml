@@ -171,7 +171,7 @@ extraEnvVars:
   - name: MINIO_IDENTITY_OPENID_DISPLAY_NAME_PRIMARY_IAM
     value: "Keycloak"
   - name: MINIO_IDENTITY_OPENID_SCOPES_PRIMARY_IAM
-    value: "openid,email,preferred_username,groups"
+    value: "openid,email,profile,groups"
   - name: MINIO_IDENTITY_OPENID_REDIRECT_URI_DYNAMIC_PRIMARY_IAM
     value: "on"
   - name: MINIO_BROWSER_REDIRECT_URL
