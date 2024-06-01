@@ -161,21 +161,21 @@ tls:
 ##   - name: FOO
 ##     value: "bar"
 ##
-extraEnvVars:
-  - name: MINIO_IDENTITY_OPENID_CONFIG_URL_PRIMARY_IAM
-    value: "https://keycloak.baityapp.online/realms/baityapp/.well-known/openid-configuration"
-  - name: MINIO_IDENTITY_OPENID_CLIENT_ID_PRIMARY_IAM
-    value: "minio"
-  - name: MINIO_IDENTITY_OPENID_CLIENT_SECRET_PRIMARY_IAM
-    value: "z0eIvCychq8t8Y317BzPia8yuKLpN2ee"
-  - name: MINIO_IDENTITY_OPENID_DISPLAY_NAME_PRIMARY_IAM
-    value: "Keycloak"
-  - name: MINIO_IDENTITY_OPENID_SCOPES_PRIMARY_IAM
-    value: "openid,email,profile,groups"
-  - name: MINIO_IDENTITY_OPENID_REDIRECT_URI_DYNAMIC_PRIMARY_IAM
-    value: "on"
-  - name: MINIO_BROWSER_REDIRECT_URL
-    value: "https://minio.baityapp.online"
+extraEnvVars: ""
+  #- name: MINIO_IDENTITY_OPENID_CONFIG_URL_PRIMARY_IAM
+  #  value: "https://keycloak.baityapp.online/realms/baityapp/.well-known/openid-configuration"
+  #- name: MINIO_IDENTITY_OPENID_CLIENT_ID_PRIMARY_IAM
+  #  value: "minio"
+  #- name: MINIO_IDENTITY_OPENID_CLIENT_SECRET_PRIMARY_IAM
+  #  value: "z0eIvCychq8t8Y317BzPia8yuKLpN2ee"
+  #- name: MINIO_IDENTITY_OPENID_DISPLAY_NAME_PRIMARY_IAM
+  #  value: "Keycloak"
+  #- name: MINIO_IDENTITY_OPENID_SCOPES_PRIMARY_IAM
+  #  value: "openid,email,profile,groups"
+  #- name: MINIO_IDENTITY_OPENID_REDIRECT_URI_DYNAMIC_PRIMARY_IAM
+  #  value: "on"
+  #- name: MINIO_BROWSER_REDIRECT_URL
+  #  value: "https://minio.baityapp.online"
 ## @param extraEnvVarsCM ConfigMap with extra environment variables
 ##
 extraEnvVarsCM: ""
