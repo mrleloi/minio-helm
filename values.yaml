@@ -25,7 +25,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  storageClass: "longhorn"
+  storageClass: "ceph-block"
   ## Compatibility adaptations for Kubernetes platforms
   ##
   compatibility:
@@ -163,7 +163,7 @@ tls:
 ##
 extraEnvVars: ""
   #- name: MINIO_IDENTITY_OPENID_CONFIG_URL_PRIMARY_IAM
-  #  value: "https://keycloak.baityapp.online/realms/baityapp/.well-known/openid-configuration"
+  #  value: "https://keycloak.mqgroup.org/realms/baityapp/.well-known/openid-configuration"
   #- name: MINIO_IDENTITY_OPENID_CLIENT_ID_PRIMARY_IAM
   #  value: "minio"
   #- name: MINIO_IDENTITY_OPENID_CLIENT_SECRET_PRIMARY_IAM
@@ -175,7 +175,7 @@ extraEnvVars: ""
   #- name: MINIO_IDENTITY_OPENID_REDIRECT_URI_DYNAMIC_PRIMARY_IAM
   #  value: "on"
   #- name: MINIO_BROWSER_REDIRECT_URL
-  #  value: "https://minio.baityapp.online"
+  #  value: "https://minio.mqgroup.org"
 ## @param extraEnvVarsCM ConfigMap with extra environment variables
 ##
 extraEnvVarsCM: ""
@@ -255,7 +255,7 @@ provisioning:
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/assign-pods-nodes/
   ##
   nodeSelector:
-    dedicated: master
+    storage: worker
   ## @param provisioning.podLabels Extra labels for provisioning pods
   ## Ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
   ##
@@ -618,7 +618,7 @@ affinity: {}
 ## ref: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/
 ##
 nodeSelector:
-  dedicated: master
+  dedicated: worker
 ## @param tolerations Tolerations for pod assignment. Evaluated as a template.
 ## ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
 ##
@@ -833,7 +833,7 @@ ingress:
   ingressClassName: "nginx"
   ## @param ingress.hostname Default host for the ingress resource
   ##
-  hostname: minio.baityapp.online
+  hostname: minio.mqgroup.org
   ## @param ingress.path The Path to MinIO&reg;. You may need to set this to '/*' in order to use this with ALB ingress controllers.
   ##
   path: /
@@ -954,7 +954,7 @@ apiIngress:
   ingressClassName: "nginx"
   ## @param apiIngress.hostname Default host for the ingress resource
   ##
-  hostname: minioapi.baityapp.online
+  hostname: minioapi.mqgroup.org
   ## @param apiIngress.path The Path to MinIO&reg;. You may need to set this to '/*' in order to use this with ALB ingress controllers.
   ##
   path: /
@@ -1117,7 +1117,7 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: "longhorn"
+  storageClass: "ceph-block"
   ## @param persistence.mountPath Data volume mount path
   ##
   mountPath: /bitnami/minio/data
